@@ -1,0 +1,36 @@
+<div class="container-fluid" data-ng-controller="HomeCtrl" data-ng-init="getWeatherData()">
+  <div class="row">
+    <form class="navbar-form navbar-center search-form" role="search" ng-submit="getWeatherData()">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="CITY, ST" id="searchInput">
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <div class="weatherData">
+      <h1 id="cityDisplay" class="cityDisplay">{{city}}</h1>
+      <div class="col-sm-3" ng-repeat="item in weatherData">
+        <div class="panel">
+          <div class="panel-body">
+            <div class="details">
+              <h2 class="day">{{item.date | date:'EEE, MMM d, y'}}</h2>
+              <h3 class="day">{{item.weather[0].main}} | {{item.weather[0].description}}</h3>
+              <div class="specs">
+                <div class="temps">
+                  <p>Day Temp: {{(item.temp.day | number:0)*1}}&degF</p>
+                  <p>Low: {{(item.temp.min | number:0)*1}}&degF</p>
+                  <p>High: {{(item.temp.max | number:0)*1}}&degF</p>
+                </div>
+                <div class="other">
+                  <p>Rain: {{item.rain </p>
+                  <p>Wind: {{(item.speed | number:1)*1}} Mph</p>
+                  <p>Humidity: {{(item.humidity | number:0)*1}}%</p>
+                  <p>Cloudiness: {{(item.clouds | number:0)*1}}%</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
