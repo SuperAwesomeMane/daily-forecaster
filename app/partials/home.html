@@ -4,7 +4,7 @@
       <div class="form-group">
         <input type="text" class="form-control" placeholder="CITY, ST" id="searchInput">
       </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <div class="weatherData">
       <h1 id="cityDisplay" class="cityDisplay">{{city}}</h1>
@@ -12,6 +12,9 @@
         <div class="panel">
           <div class="panel-body">
             <div class="details">
+              <div class="weatherIcon"">
+                <img class="icon" src="/assets/{{item.weatherType}}.png">
+              </div>
               <h2 class="day">{{item.date | date:'EEE, MMM d, y'}}</h2>
               <h3 class="day">{{item.weather[0].main}} | {{item.weather[0].description}}</h3>
               <div class="specs">

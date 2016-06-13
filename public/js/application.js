@@ -46,6 +46,7 @@ angular.module('MyApp')
           
           $scope.weatherData = $scope.weatherData.map(function(item) {
             item.date = new Date(item.dt * 1000);
+            item.weatherType = item.weather[0].main;
             return item;
           });
 
